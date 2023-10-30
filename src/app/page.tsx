@@ -1,6 +1,7 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
 export default function Home() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -10,7 +11,22 @@ export default function Home() {
   const backGroundPic = useTransform(scrollYProgress, [0, 1], ["1", "1.1"]);
   const backGroundPic2 = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const text = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+ 
+  useEffect(()=>{
+    const lenis = new Lenis()
+    lenis.on('scroll', (e:any) => {
+      console.log(e)
+    })
+    
+    function raf(time:any) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+  })
 
+  
+  
   return (
     <div className="text-slate-100">
       {/* main image */}
