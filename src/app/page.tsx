@@ -9,7 +9,7 @@ export default function Home() {
   });
   const backGroundPic = useTransform(scrollYProgress, [0, 1], ["1", "1.1"]);
   const backGroundPic2 = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const text = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
+  const text = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
 
   return (
     <div className="text-slate-100">
