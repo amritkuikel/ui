@@ -7,9 +7,9 @@ export default function Home() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const backGroundPic = useTransform(scrollYProgress, [0, 1], ["1", "1.3"]);
+  const backGroundPic = useTransform(scrollYProgress, [0, 1], ["1", "1.1"]);
   const backGroundPic2 = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const text = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  const text = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
 
   return (
     <div className="text-slate-100">
@@ -24,7 +24,7 @@ export default function Home() {
       <div className="relative" >
         {/* nav bar */}
         <motion.div ref={ref} style={{ y: text }}>
-          <div className="flex justify-between items-center pt-5 pb-56">
+          <div className="flex justify-between items-center pt-5 pb-52">
             <div className="flex ">
               <div className="pl-5  font-bold text-3xl origin-bottom ">exo</div>
               <div className="pl-1  font-light text-3xl  italic">ape</div>
@@ -44,14 +44,14 @@ export default function Home() {
                 <div>Contact</div>
               </div>
           </div>
-          <div className="text-lg font-medium pb-5 pl-5" >
+          
+        </motion.div>
+        {/* hero texts */}
+        <motion.div className="flex-col px-5 pt-4" style={{ y: text }}>
+        <div className="text-lg font-medium pb-5 " >
             Global digital design studio partnering with brands businesses that
             create exceptional experiences where people live, work, and unwind.
           </div>
-        </motion.div>
-        {/* hero texts */}
-        <motion.div className="flex-col px-5" style={{ y: text }}>
-         
           <div className="text-6xl mb-5 font-medium ">
             <div>Digital</div>
             <div>Design</div>
