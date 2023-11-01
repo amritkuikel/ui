@@ -30,13 +30,26 @@ export default function Home() {
   return (
     <div className="text-slate-100 bg-slate-900 relative overflow-hidden">
       <div className="fixed z-10">
-        <div className="flex w-screen justify-between items-center pt-5">
-          <div className="flex">
-            <div className="pl-5 font-bold text-3xl ">exo</div>
-            <div className="pl-1  font-light text-3xl  italic">ape</div>
+        <div className="flex w-screen justify-between items-center pt-5 ">
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex"
+              variants={{
+                initial: { y: "130%", rotate: "5deg" },
+                viewT: { y: "0%", rotate: "0deg" },
+                viewF: { y: "-130%", rotate: "0deg" },
+              }}
+              initial={"initial"}
+              animate={isInView2 ? "viewT" : "viewF"}
+              transition={{ duration: 0.125, ease: "backInOut" }}
+            >
+              <div className="pl-5 font-bold text-3xl">exo</div>
+              <div className="pl-1  font-light text-3xl  italic">ape</div>
+            </motion.div>
           </div>
+
           <div className="flex pr-5 md:hidden ">
-            <div className=" pr-3 text-sm font-medium"> Menu</div>
+            <div className=" pr-3 text-sm font-medium">Menu</div>
             <div className=" flex-col self-center  ">
               <div className=" w-5 h-0.5 bg-white"></div>
               <div className="w-5 h-0.5 bg-white my-1"></div>
