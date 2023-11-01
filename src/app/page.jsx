@@ -33,7 +33,18 @@ export default function Home() {
   return (
     <div>
       {isCLicked ? (
-        <div className="bg-black h-full w-screen absolute z-20"></div>
+        <div className="bg-black h-full w-screen absolute z-20 text-white">
+          <div className="pt-5 flex justify-between items-center">
+            <div className="flex ">
+              <div className="pl-5 font-bold text-3xl">exo</div>
+              <div className="pl-1  font-light text-3xl  italic">ape</div>
+            </div>
+            <div className="flex items-center" onClick={clickHandler}>
+              <div className=" pr-3 text-sm font-medium">Close</div>
+              <div className="pr-5 font-extrabold text-2xl">&#10005;</div>
+            </div>
+          </div>
+        </div>
       ) : (
         <div className="text-slate-100 bg-slate-900 relative overflow-hidden">
           <div className="fixed z-10">
