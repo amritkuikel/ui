@@ -29,9 +29,9 @@ export default function Home() {
   function clickHandler() {
     setIsClicked(!isCLicked);
   }
-
+  
   return (
-    <div>
+    <div >
       {isCLicked ? (
         <div className="bg-black h-full w-screen absolute z-20 text-white">
           <div className="pt-5 flex justify-between items-center">
