@@ -29,6 +29,22 @@ export default function Home() {
 
   return (
     <div className="text-slate-100 bg-slate-900 relative overflow-hidden">
+      <div className="fixed z-10">
+        <div className="flex w-screen justify-between items-center pt-5">
+          <div className="flex">
+            <div className="pl-5 font-bold text-3xl ">exo</div>
+            <div className="pl-1  font-light text-3xl  italic">ape</div>
+          </div>
+          <div className="flex pr-5 md:hidden ">
+            <div className=" pr-3 text-sm font-medium"> Menu</div>
+            <div className=" flex-col self-center  ">
+              <div className=" w-5 h-0.5 bg-white"></div>
+              <div className="w-5 h-0.5 bg-white my-1"></div>
+              <div className="w-5 h-0.5 bg-white"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* bg-image */}
       <motion.div
         initial={{
@@ -51,48 +67,12 @@ export default function Home() {
 
       <div>
         <div className="h-1 w-screen" ref={ref3}></div>
-        {/* nav bar */}
-        <motion.div ref={ref} style={{ y: text }}>
-          <div className=" pb-48 ">
-            <motion.div
-              className="pt-4 flex justify-between items-center"
-              ref={ref2}
-            >
-              <div>
-                <div className="overflow-hidden">
-                  <motion.div
-                    className="flex"
-                    variants={{
-                      initial: { y: "130%", rotate: "5deg" },
-                      viewT: { y: "0%", rotate: "0deg" },
-                      viewF: { y: "-130%", rotate: "0deg" },
-                    }}
-                    initial={"initial"}
-                    animate={isInView2 ? "viewT" : "viewF"}
-                    transition={{ duration: 0.125, ease: "backInOut" }}
-                  >
-                    <div className="pl-5 font-bold text-3xl ">exo</div>
-                    <div className="pl-1  font-light text-3xl  italic">ape</div>
-                  </motion.div>
-                </div>
-              </div>
-              <div className="flex pr-5 md:hidden ">
-                <div className=" pr-3 text-sm font-medium"> Menu</div>
-                <div className=" flex-col self-center  ">
-                  <div className=" w-5 h-0.5 bg-white"></div>
-                  <div className="w-5 h-0.5 bg-white my-1"></div>
-                  <div className="w-5 h-0.5 bg-white"></div>
-                </div>
-              </div>
-              <div className="pr-5 hidden sm:hidden md:inline-flex text-lg ">
-                <div className="pr-3">Work</div>
-                <div className="pr-3">Studio</div>
-                <div className="pr-3">News</div>
-                <div>Contact</div>
-              </div>
-            </motion.div>
+        {/* nav bar replacement*/}
+        <div ref={ref}>
+          <div className="pb-48 pt-4">
+            <div className="h-9 w-screen" ref={ref2}></div>
           </div>
-        </motion.div>
+        </div>
         {/* hero texts */}
         <motion.div className="flex-col px-5 pt-4" style={{ y: text }}>
           <div className="pb-5">
