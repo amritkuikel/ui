@@ -13,7 +13,7 @@ export default function Home() {
     offset: ["start start", "end start"],
   });
   const backGroundPic = useTransform(scrollYProgress, [0, 1], ["1", "1.2"]);
-  const backGroundPic2 = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const backGroundPic2 = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const bgOpacity = useTransform(scrollYProgress, [0, 1], ["0.1", "0.4"]);
   const text = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
   useEffect(() => {
